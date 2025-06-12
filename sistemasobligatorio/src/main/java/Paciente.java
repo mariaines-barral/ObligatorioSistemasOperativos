@@ -1,3 +1,10 @@
+/**
+ * Clase dedicada de los pacientes, son nuestros procesos, esos tienen los
+ * valores para ser posteriormente leidos
+ * por las otras clases, especialmente el recepcionista(ingreso) y
+ * clinica(gestion de colas).
+ * - Falta resolver el tiempo. Posiblemente implmentar Timer de JDK(Java.utils).
+ */
 public class Paciente {
     private String Nombre;
     private String MotivoDeConsulta;
