@@ -1,3 +1,5 @@
+package sistemasobligatorio;
+
 /**
  * Clase dedicada de los pacientes, son nuestros procesos, esos tienen los
  * valores para ser posteriormente leidos
