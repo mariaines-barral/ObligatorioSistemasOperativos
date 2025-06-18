@@ -1,60 +1,78 @@
 package sistemasobligatorio;
 
-/**
- * Enfermero, clase dedicada a asistir a pacientes y a realizar analisis de
- * Sangre y/o Orina.
- */
-public class Enfermero implements Runnable {
-    private String Nombre;
-    private Boolean Disponibilidad;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.Comparator;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-    public Enfermero(String nombre) {
-        Nombre = nombre;
-        Disponibilidad = true;
+class Enfermero implements Runnable {
+    private final String nombre;
+    private final Clinica clinica;
+    private volatile boolean disponible = true;
+
+    public Enfermero(String nombre, Clinica clinica) {
+        this.nombre = nombre;
+        this.clinica = clinica;
     }
 
     @Override
     public void run() {
+        System.out.println(nombre + " iniciado - Esperando pacientes");
 
+        while (clinica.estaAbierta()) {
+            try {
+                Paciente paciente = clinica.tomarPaciente();
+                atenderPaciente(paciente);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
     }
 
-    public void curar(Paciente paciente) {
-        Disponibilidad = false;
-        System.out.println("El enfermero " + Nombre + " está curando a: " + paciente.getNombre());
+    private void atenderPaciente(Paciente paciente) throws InterruptedException {
+        String motivo = paciente.getMotivoDeConsulta();
 
-        try {
-            Thread.sleep(paciente.getTiempoMaxDeConsulta());
-        } catch (InterruptedException ex) {
-
+        if ("Emergencia".equals(motivo) || "Urgencia".equals(motivo)) {
+            // Ya está siendo atendido junto con el doctor
+            return;
+        } else if ("Carne de salud".equals(motivo)) {
+            realizarAnalisis(paciente);
         }
-
-        Disponibilidad = true;
     }
 
-    public void analisisDeSangre(Paciente paciente) {
-        Disponibilidad = false;
-        System.out.println(
-                "El enfermero " + Nombre + " está haciendole un analisis de sangre a: " + paciente.getNombre());
+    private void realizarAnalisis(Paciente paciente) throws InterruptedException {
+        // Necesita sala de enfermería
+        clinica.salaDeEnfermeria.acquire();
 
         try {
-            Thread.sleep(paciente.getTiempoMaxDeConsulta());
-        } catch (InterruptedException ex) {
-        }
+            disponible = false;
+            System.out.println(nombre + " realizando análisis de sangre y orina a " +
+                    paciente.getNombre());
 
-        Disponibilidad = true;
+            // Simular análisis de sangre
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 50);
+            System.out.println("Análisis de sangre completado para " + paciente.getNombre());
+
+            // Simular análisis de orina
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 50);
+            System.out.println("Análisis de orina completado para " + paciente.getNombre());
+
+            clinica.incrementarAtendidos();
+            System.out.println("Carnet de salud completado para " + paciente.getNombre());
+
+        } finally {
+            disponible = true;
+            clinica.salaDeEnfermeria.release();
+        }
     }
 
-    public void analisisDeOrina(Paciente paciente) {
-        Disponibilidad = false;
-        System.out
-                .println("El enfermero " + Nombre + " está haciendole un analisis de orina a: " + paciente.getNombre());
-
-        try {
-            Thread.sleep(paciente.getTiempoMaxDeConsulta());
-        } catch (InterruptedException ex) {
-
-        }
-
-        Disponibilidad = true;
+    public boolean estaDisponible() {
+        return disponible;
     }
 }
