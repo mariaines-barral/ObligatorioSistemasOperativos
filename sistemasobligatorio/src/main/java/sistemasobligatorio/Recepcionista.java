@@ -48,12 +48,16 @@ class Recepcionista implements Runnable {
                     boolean tieneInforme = Boolean.parseBoolean(datos[4]);
                     int tiempoEsperando = Integer.parseInt(datos[5]);
                     boolean tiempoAgotado = Boolean.parseBoolean(datos[6]);
-
+                    if (!tieneInforme && motivo.equals("Carne de salud")) {
+                        clinica.incrementarRechazados();
+                        continue;
+                    }
                     Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
                             tieneInforme, tiempoEsperando, tiempoAgotado);
 
                     // Simular llegada en el tiempo especificado
                     Thread.sleep(1000); // Simular tiempo entre llegadas
+                    
                     clinica.agregarPaciente(paciente);
                 }
             }
