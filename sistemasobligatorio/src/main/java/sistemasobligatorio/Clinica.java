@@ -11,9 +11,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Clinica {
+
     public volatile int PacientesAtendidos;
     public volatile int PacientesRechazados;
     public volatile int PacientesMuertos;
+    public volatile int[] tiempoSimulado = new int[2];
 
     // Recursos limitados
     public final Semaphore consultorioReservadoParaEmergencia = new Semaphore(1);
@@ -35,16 +37,32 @@ public class Clinica {
     // Control de simulación
     private volatile boolean clinicaAbierta = true;
 
+    public class Reloj implements Runnable {
+        @Override
+        public void run() {
+            while (clinicaAbierta) {
+                try {
+                    Thread.sleep(100);
+                    incrementarTiempo();
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        }
+    }
+
     public Clinica(String archivoPacientes) {
         PacientesAtendidos = 0;
         PacientesRechazados = 0;
         PacientesMuertos = 0;
+        tiempoSimulado[0] = 8;
+        tiempoSimulado[1] = 0;
 
         // Cola única con comparador de prioridad
         colaPacientes = new PriorityBlockingQueue<>(100, new ComparadorPrioridad());
 
         // Pool de hilos
-        ejecutorHilos = Executors.newFixedThreadPool(4);
+        ejecutorHilos = Executors.newFixedThreadPool(3);
 
         // Crear trabajadores
         recepcionista = new Recepcionista(this);
@@ -56,6 +74,29 @@ public class Clinica {
         ejecutorHilos.submit(recepcionista);
         ejecutorHilos.submit(doctor);
         ejecutorHilos.submit(enfermero);
+
+        iniciarRelojSimulado();
+    }
+
+    public synchronized int[] getTiempoSimulado() {
+        return new int[] { tiempoSimulado[0], tiempoSimulado[1] };
+    }
+
+    private synchronized void incrementarTiempo() {
+        if (tiempoSimulado[1] == 59) {
+            tiempoSimulado[0]++;
+            tiempoSimulado[1] = 0;
+        }
+        tiempoSimulado[1]++;
+
+        if (tiempoSimulado[0] == 20 && tiempoSimulado[1] == 0) {
+            cerrarClinica();
+        }
+    }
+
+    private void iniciarRelojSimulado() {
+        Thread reloj = new Thread(new Reloj());
+        reloj.start();
     }
 
     public void agregarPaciente(Paciente paciente) {
@@ -66,37 +107,6 @@ public class Clinica {
     public Paciente tomarPaciente() throws InterruptedException {
         return colaPacientes.take(); // Bloquea hasta que haya un paciente
     }
-
-    /*
-     * public void cargarPacientesDelArchivo(String archivo) {
-     * ejecutorHilos.submit(() -> {
-     * try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-     * String linea;
-     * while ((linea = br.readLine()) != null) {
-     * String[] datos = linea.split(",");
-     * if (datos.length == 7) {
-     * String tiempo = datos[0];
-     * String nombre = datos[1].replace("\"", "");
-     * String motivo = datos[2].replace("\"", "");
-     * int tiempoConsulta = Integer.parseInt(datos[3]);
-     * boolean tieneInforme = Boolean.parseBoolean(datos[4]);
-     * int tiempoEsperando = Integer.parseInt(datos[5]);
-     * boolean tiempoAgotado = Boolean.parseBoolean(datos[6]);
-     * 
-     * Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
-     * tieneInforme, tiempoEsperando, tiempoAgotado);
-     * 
-     * // Simular llegada en el tiempo especificado
-     * Thread.sleep(1000); // Simular tiempo entre llegadas
-     * agregarPaciente(paciente);
-     * }
-     * }
-     * } catch (IOException | InterruptedException e) {
-     * e.printStackTrace();
-     * }
-     * });
-     * }
-     */
 
     public void cerrarClinica() {
         clinicaAbierta = false;
@@ -131,11 +141,11 @@ public class Clinica {
         }
 
         private int obtenerPrioridad(String motivo) {
-            if (motivo == "Emergencia") {
+            if (motivo.equals("Emergencia")) {
                 return 1;
-            } else if (motivo == "Urgencia") {
+            } else if (motivo.equals("Urgencia")) {
                 return 2;
-            } else if (motivo == "Carne de salud") {
+            } else if (motivo.equals("Carne de salud")) {
                 return 3;
             } else {
                 throw new IllegalArgumentException("Motivo de consulta desconocido: " + motivo);
