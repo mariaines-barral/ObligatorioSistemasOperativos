@@ -142,4 +142,12 @@ public class Clinica {
             }
         }
     }
+    /**
+     * Retorna un enfermero que se encuentre disponible,
+     *en nuestra implementación existe únicamente uno.
+     * @return Enfermero
+     */
+    public Enfermero getEnfermero(){
+        return enfermero;
+    }
 }

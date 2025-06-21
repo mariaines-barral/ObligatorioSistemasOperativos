@@ -34,6 +34,7 @@ class Doctor implements Runnable {
             }
         }
     }
+    
 
     private void atenderPaciente(Paciente paciente) throws InterruptedException {
         String motivo = paciente.getMotivoDeConsulta();
@@ -102,7 +103,7 @@ class Doctor implements Runnable {
         }
     }
 
-    private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
+/*     private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
         // Solo necesita consultorio para la consulta médica
         clinica.consultorioLibre.acquire();
 
@@ -119,6 +120,27 @@ class Doctor implements Runnable {
             disponible = true;
             clinica.consultorioLibre.release();
         }
+    } */
+
+    private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
+        clinica.consultorioLibre.acquire();
+        try {
+            disponible = false;
+            System.out.println(nombre + " entrevistando a " + paciente.getNombre() + " para el carné de salud.");
+            // Simular entrevista
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
+            System.out.println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
+            clinica.enfermeroDisponible.acquire();
+            disponible = true;
+            clinica.consultorioLibre.release();
+            Enfermero enfermero = clinica.getEnfermero();
+            enfermero.hacerAnalisis(paciente); // Con el paciente.
+            // metodo auxiliar del enfemero, lleme al paciente.
+            clinica.incrementarAtendidos();
+            System.out.println("Carné de salud completo para " + paciente.getNombre());
+
+        }
+        finally{} // se tiene que sacar.
     }
 
     public boolean estaDisponible() {
