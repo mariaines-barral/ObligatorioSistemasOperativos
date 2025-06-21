@@ -86,8 +86,9 @@ public class Clinica {
         if (tiempoSimulado[1] == 59) {
             tiempoSimulado[0]++;
             tiempoSimulado[1] = 0;
+        } else {
+            tiempoSimulado[1]++;
         }
-        tiempoSimulado[1]++;
 
         if (tiempoSimulado[0] == 20 && tiempoSimulado[1] == 0) {
             cerrarClinica();
