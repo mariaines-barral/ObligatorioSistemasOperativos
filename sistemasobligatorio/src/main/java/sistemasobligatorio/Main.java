@@ -12,7 +12,7 @@ import java.io.IOException;
 
 class Main {
     public static void main(String[] args) {
-        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt");
+        Clinica clinica = new Clinica("src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt");
 
         // Simular funcionamiento por 30 segundos
         try {
