@@ -22,7 +22,7 @@ class Doctor implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(nombre + " iniciado - Esperando pacientes");
+        System.out.println(nombre + " trabajando - Esperando pacientes para atender B)");
 
         while (clinica.estaAbierta()) {
             try {
@@ -38,41 +38,77 @@ class Doctor implements Runnable {
     private void atenderPaciente(Paciente paciente) throws InterruptedException {
         String motivo = paciente.getMotivoDeConsulta();
 
-        if ("Emergencia".equals(motivo) || "Urgencia".equals(motivo)) {
-            atenderEmergenciaOUrgencia(paciente);
+        if ("Emergencia".equals(motivo)) {
+            atenderEmergencia(paciente);
+        } else if ("Urgencia".equals(motivo)) {
+            atenderUrgencia(paciente);
         } else if ("Carne de salud".equals(motivo)) {
             atenderCarnetSalud(paciente);
         }
     }
 
-    private void atenderEmergenciaOUrgencia(Paciente paciente) throws InterruptedException {
+    private void atenderEmergencia(Paciente paciente) throws InterruptedException {
         // Necesita consultorio y colaboración con enfermero
-        clinica.consultoriosLibres.acquire();
+        boolean usoConsultorioNormal = false;
+        if (clinica.consultorioLibre.tryAcquire()) {
+            usoConsultorioNormal = true;
+        } else {
+            clinica.consultorioReservadoParaEmergencia.acquire();
+        }
+        clinica.enfermeroDisponible.acquire(); // Espera a que el enfermero esté libre
 
         try {
             disponible = false;
-            System.out.println(nombre + " atendiendo " + paciente.getMotivoDeConsulta() +
+            System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
                     " de " + paciente.getNombre());
 
             // Simular atención conjunta (doctor + enfermero)
-            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100); // Convertir a ms
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
 
             clinica.incrementarAtendidos();
             System.out.println(paciente.getNombre() + " atendido exitosamente");
 
         } finally {
             disponible = true;
-            clinica.consultoriosLibres.release();
+            clinica.enfermeroDisponible.release(); // Libera al enfermero
+            if (usoConsultorioNormal) {
+                clinica.consultorioLibre.release();
+            } else {
+                clinica.consultorioReservadoParaEmergencia.release();
+            }
+        }
+    }
+
+    private void atenderUrgencia(Paciente paciente) throws InterruptedException {
+        // Necesita consultorio y colaboración con enfermero
+        clinica.consultorioLibre.acquire();
+        clinica.enfermeroDisponible.acquire(); // Espera a que el enfermero esté libre
+
+        try {
+            disponible = false;
+            System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
+                    " de " + paciente.getNombre());
+
+            // Simular atención conjunta (doctor + enfermero)
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
+
+            clinica.incrementarAtendidos();
+            System.out.println(paciente.getNombre() + " atendido exitosamente");
+
+        } finally {
+            disponible = true;
+            clinica.enfermeroDisponible.release(); // Libera al enfermero
+            clinica.consultorioLibre.release();
         }
     }
 
     private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
         // Solo necesita consultorio para la consulta médica
-        clinica.consultoriosLibres.acquire();
+        clinica.consultorioLibre.acquire();
 
         try {
             disponible = false;
-            System.out.println(nombre + " realizando consulta de carnet de salud a " +
+            System.out.println(nombre + " realizando entrevista para carnet de salud a " +
                     paciente.getNombre());
 
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
@@ -81,7 +117,7 @@ class Doctor implements Runnable {
 
         } finally {
             disponible = true;
-            clinica.consultoriosLibres.release();
+            clinica.consultorioLibre.release();
         }
     }
 

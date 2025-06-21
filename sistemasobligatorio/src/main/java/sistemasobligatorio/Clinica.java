@@ -16,11 +16,13 @@ public class Clinica {
     public volatile int PacientesMuertos;
 
     // Recursos limitados
-    public final Semaphore consultoriosLibres = new Semaphore(2);
+    public final Semaphore consultorioReservadoParaEmergencia = new Semaphore(1);
+    public final Semaphore consultorioLibre = new Semaphore(1);
     public final Semaphore salaDeEnfermeria = new Semaphore(1);
+    public final Semaphore enfermeroDisponible = new Semaphore(1);
 
-    // Colas thread-safe con prioridad
-    private final PriorityBlockingQueue<Paciente> colaPacientes;
+    // Cola thread-safe con prioridad
+    protected final PriorityBlockingQueue<Paciente> colaPacientes;
 
     // Hilos trabajadores
     private final ExecutorService ejecutorHilos;
@@ -28,10 +30,12 @@ public class Clinica {
     private final Doctor doctor;
     private final Enfermero enfermero;
 
+    public final String archivoDePacientes;
+
     // Control de simulación
     private volatile boolean clinicaAbierta = true;
 
-    public Clinica() {
+    public Clinica(String archivoPacientes) {
         PacientesAtendidos = 0;
         PacientesRechazados = 0;
         PacientesMuertos = 0;
@@ -46,6 +50,7 @@ public class Clinica {
         recepcionista = new Recepcionista(this);
         doctor = new Doctor("Dr. García", this);
         enfermero = new Enfermero("Enfermero López", this);
+        archivoDePacientes = archivoPacientes;
 
         // Iniciar hilos
         ejecutorHilos.submit(recepcionista);
@@ -62,34 +67,36 @@ public class Clinica {
         return colaPacientes.take(); // Bloquea hasta que haya un paciente
     }
 
-    public void cargarPacientesDelArchivo(String archivo) {
-        ejecutorHilos.submit(() -> {
-            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-                String linea;
-                while ((linea = br.readLine()) != null) {
-                    String[] datos = linea.split(",");
-                    if (datos.length >= 7) {
-                        String tiempo = datos[0];
-                        String nombre = datos[1].replace("\"", "");
-                        String motivo = datos[2].replace("\"", "");
-                        int tiempoConsulta = Integer.parseInt(datos[3]);
-                        boolean tieneInforme = Boolean.parseBoolean(datos[4]);
-                        int tiempoEsperando = Integer.parseInt(datos[5]);
-                        boolean tiempoAgotado = Boolean.parseBoolean(datos[6]);
-
-                        Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
-                                tieneInforme, tiempoEsperando, tiempoAgotado);
-
-                        // Simular llegada en el tiempo especificado
-                        Thread.sleep(1000); // Simular tiempo entre llegadas
-                        agregarPaciente(paciente);
-                    }
-                }
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-    }
+    /*
+     * public void cargarPacientesDelArchivo(String archivo) {
+     * ejecutorHilos.submit(() -> {
+     * try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+     * String linea;
+     * while ((linea = br.readLine()) != null) {
+     * String[] datos = linea.split(",");
+     * if (datos.length == 7) {
+     * String tiempo = datos[0];
+     * String nombre = datos[1].replace("\"", "");
+     * String motivo = datos[2].replace("\"", "");
+     * int tiempoConsulta = Integer.parseInt(datos[3]);
+     * boolean tieneInforme = Boolean.parseBoolean(datos[4]);
+     * int tiempoEsperando = Integer.parseInt(datos[5]);
+     * boolean tiempoAgotado = Boolean.parseBoolean(datos[6]);
+     * 
+     * Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
+     * tieneInforme, tiempoEsperando, tiempoAgotado);
+     * 
+     * // Simular llegada en el tiempo especificado
+     * Thread.sleep(1000); // Simular tiempo entre llegadas
+     * agregarPaciente(paciente);
+     * }
+     * }
+     * } catch (IOException | InterruptedException e) {
+     * e.printStackTrace();
+     * }
+     * });
+     * }
+     */
 
     public void cerrarClinica() {
         clinicaAbierta = false;
@@ -124,15 +131,14 @@ public class Clinica {
         }
 
         private int obtenerPrioridad(String motivo) {
-            switch (motivo) {
-                case "Emergencia":
-                    return 1;
-                case "Urgencia":
-                    return 2;
-                case "Carne de salud":
-                    return 3;
-                default:
-                    return 4;
+            if (motivo == "Emergencia") {
+                return 1;
+            } else if (motivo == "Urgencia") {
+                return 2;
+            } else if (motivo == "Carne de salud") {
+                return 3;
+            } else {
+                throw new IllegalArgumentException("Motivo de consulta desconocido: " + motivo);
             }
         }
     }

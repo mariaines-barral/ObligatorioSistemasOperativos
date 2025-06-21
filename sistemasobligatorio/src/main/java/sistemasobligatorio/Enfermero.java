@@ -22,7 +22,7 @@ class Enfermero implements Runnable {
 
     @Override
     public void run() {
-        System.out.println(nombre + " iniciado - Esperando pacientes");
+        System.out.println(nombre + " trabajando - Esperando pacientes para atender :^)");
 
         while (clinica.estaAbierta()) {
             try {

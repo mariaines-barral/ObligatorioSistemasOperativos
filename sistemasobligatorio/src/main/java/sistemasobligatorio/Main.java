@@ -12,16 +12,7 @@ import java.io.IOException;
 
 class Main {
     public static void main(String[] args) {
-        Clinica clinica = new Clinica();
-
-        // Cargar pacientes del archivo
-        clinica.cargarPacientesDelArchivo(
-                "sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt");
-
-        // Agregar algunos pacientes manualmente para probar
-        clinica.agregarPaciente(new Paciente("María", "Emergencia", 25, false, 0, false));
-        clinica.agregarPaciente(new Paciente("Carlos", "Carne de salud", 15, true, 5, false));
-        clinica.agregarPaciente(new Paciente("Laura", "Urgencia", 20, false, 2, false));
+        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt");
 
         // Simular funcionamiento por 30 segundos
         try {
