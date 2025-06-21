@@ -41,23 +41,36 @@ class Recepcionista implements Runnable {
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
                 if (datos.length == 7) {
-                    String tiempo = datos[0];
+                    String tiempo = datos[0]; // "8.10"
+                    String[] partes = tiempo.split("\\.");
+                    int horaLlegada = Integer.parseInt(partes[0]);
+                    int minutoLlegada = 0;
+                    if (partes.length > 1) {
+                        minutoLlegada = Integer.parseInt(partes[1]);
+                    }
                     String nombre = datos[1].replace("\"", "");
                     String motivo = datos[2].replace("\"", "");
                     int tiempoConsulta = Integer.parseInt(datos[3]);
                     boolean tieneInforme = Boolean.parseBoolean(datos[4]);
                     int tiempoEsperando = Integer.parseInt(datos[5]);
                     boolean tiempoAgotado = Boolean.parseBoolean(datos[6]);
+                    while (true) {
+                        int[] tiempoActual = clinica.getTiempoSimulado();
+                        if (tiempoActual[0] > horaLlegada ||
+                                (tiempoActual[0] == horaLlegada && tiempoActual[1] >= minutoLlegada)) {
+                            break;
+                        }
+                        Thread.sleep(50);
+                    }
+
                     if (!tieneInforme && motivo.equals("Carne de salud")) {
                         clinica.incrementarRechazados();
+                        System.out.println("Paciente " + nombre + " fue rechazado por no traer examen odontológico");
                         continue;
                     }
                     Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
                             tieneInforme, tiempoEsperando, tiempoAgotado);
 
-                    // Simular llegada en el tiempo especificado
-                    Thread.sleep(1000); // Simular tiempo entre llegadas
-                    
                     clinica.agregarPaciente(paciente);
                 }
             }

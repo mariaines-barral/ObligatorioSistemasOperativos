@@ -42,7 +42,7 @@ public class Clinica {
         public void run() {
             while (clinicaAbierta) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(50);
                     incrementarTiempo();
                 } catch (InterruptedException e) {
                     break;
@@ -110,6 +110,7 @@ public class Clinica {
 
     public void cerrarClinica() {
         clinicaAbierta = false;
+        System.out.println("La clínica cerró por hoy. Nos vemos mañana!");
         ejecutorHilos.shutdown();
     }
 
