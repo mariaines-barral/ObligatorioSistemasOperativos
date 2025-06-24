@@ -136,6 +136,18 @@ public class Clinica {
         PacientesMuertos++;
     }
 
+    public synchronized int getTiempoDeCola() {
+        int tiempoDeCola = 0;
+        for (Paciente paciente : colaPacientes) {
+            tiempoDeCola += paciente.getTiempoMaxDeConsulta();
+        }
+        return tiempoDeCola;
+    }
+
+    public synchronized int getTiempoRestante() {
+        return 720 - ((tiempoSimulado[0] - 8) * 60 + tiempoSimulado[1]);
+    }
+
     // Comparador para priorizar pacientes
     private static class ComparadorPrioridad implements Comparator<Paciente> {
         @Override
@@ -164,12 +176,6 @@ public class Clinica {
         }
     }
 
-    /**
-     * Retorna un enfermero que se encuentre disponible,
-     * en nuestra implementación existe únicamente uno.
-     * 
-     * @return Enfermero
-     */
     public Enfermero getEnfermero() {
         return enfermero;
     }

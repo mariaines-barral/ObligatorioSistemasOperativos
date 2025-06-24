@@ -64,9 +64,15 @@ class Recepcionista implements Runnable {
                         Thread.sleep(10);
                     }
 
+                    if (clinica.getTiempoDeCola() + tiempoConsulta > clinica.getTiempoRestante()) {
+                        clinica.incrementarRechazados();
+                        System.out.println(
+                                "Paciente " + nombre + " fue rechazado. No da el tiempo para atenderlo hoy.");
+                        continue;
+                    }
                     if (!tieneInforme && motivo.equals("Carne de salud")) {
                         clinica.incrementarRechazados();
-                        System.out.println("Paciente " + nombre + " fue rechazado por no traer examen odontológico");
+                        System.out.println("Paciente " + nombre + " fue rechazado por no traer examen odontológico.");
                         continue;
                     }
                     Paciente paciente = new Paciente(nombre, motivo, tiempoConsulta,
