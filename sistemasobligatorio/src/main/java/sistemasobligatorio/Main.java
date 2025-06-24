@@ -12,7 +12,8 @@ import java.io.IOException;
 
 class Main {
     public static void main(String[] args) {
-        Clinica clinica = new Clinica("src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt", "Dr. House",
+        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt",
+                "Dr. House",
                 "Enfermero Stark", "Pam Beesly");
 
         try {
@@ -20,11 +21,6 @@ class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println("\n=== ESTADÍSTICAS FINALES ===");
-        System.out.println("Pacientes atendidos: " + clinica.PacientesAtendidos);
-        System.out.println("Pacientes rechazados: " + clinica.PacientesRechazados);
-        System.out.println("Pacientes muertos: " + clinica.PacientesMuertos);
 
     }
 }

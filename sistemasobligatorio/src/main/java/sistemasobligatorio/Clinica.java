@@ -86,6 +86,7 @@ public class Clinica {
         if (tiempoSimulado[1] == 59) {
             tiempoSimulado[0]++;
             tiempoSimulado[1] = 0;
+            System.out.println("Hora actual: " + tiempoSimulado[0] + ":" + tiempoSimulado[1] + "0");
         } else {
             tiempoSimulado[1]++;
         }
@@ -113,6 +114,11 @@ public class Clinica {
         clinicaAbierta = false;
         System.out.println("La clínica cerró por hoy. Nos vemos mañana!");
         ejecutorHilos.shutdown();
+
+        System.out.println("\n=== ESTADISTICAS FINALES ===");
+        System.out.println("Pacientes atendidos: " + PacientesAtendidos);
+        System.out.println("Pacientes rechazados: " + PacientesRechazados);
+        System.out.println("Pacientes muertos: " + PacientesMuertos);
     }
 
     public boolean estaAbierta() {
@@ -158,12 +164,14 @@ public class Clinica {
             }
         }
     }
+
     /**
      * Retorna un enfermero que se encuentre disponible,
-     *en nuestra implementación existe únicamente uno.
+     * en nuestra implementación existe únicamente uno.
+     * 
      * @return Enfermero
      */
-    public Enfermero getEnfermero(){
+    public Enfermero getEnfermero() {
         return enfermero;
     }
 }

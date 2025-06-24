@@ -23,7 +23,7 @@ class Recepcionista implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Recepcionista" + this.nombre + "trabajando: Gestionando cola de pacientes :)");
+        System.out.println("Recepcionista " + this.nombre + " trabajando: Gestionando cola de pacientes :)");
         cargarPacientesDelArchivo(clinica.archivoDePacientes);
         while (clinica.estaAbierta()) {
             try {
@@ -32,7 +32,7 @@ class Recepcionista implements Runnable {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 break;
-            }   
+            }
         }
     }
 
