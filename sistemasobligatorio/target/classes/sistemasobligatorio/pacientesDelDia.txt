@@ -1,0 +1,43 @@
+8.20,"Lucia","Urgencia",12,false,0,false
+8.25,"Mario","Emergencia",18,false,0,false
+8.40,"Sofia","Carne de salud",10,true,0,false
+9.00,"Carlos","Urgencia",15,false,0,false
+9.10,"Valentina","Carne de salud",10,true,0,false
+9.15,"Pedro","Emergencia",20,false,0,false
+9.30,"Marta","Carne de salud",10,true,0,false
+10.00,"Luis","Urgencia",15,false,0,false
+10.10,"Florencia","Carne de salud",10,true,0,false
+10.20,"Agustin","Emergencia",20,false,0,false
+10.30,"Camila","Carne de salud",10,true,0,false
+12.00,"Ramiro","Urgencia",15,false,0,false
+12.10,"Julieta","Carne de salud",10,true,0,false
+12.20,"Nicolas","Emergencia",20,false,0,false
+12.30,"Paula","Carne de salud",10,true,0,false
+13.00,"Federico","Urgencia",15,false,0,false
+13.10,"Martina","Carne de salud",10,true,0,false
+13.20,"Bruno","Emergencia",20,false,0,false
+13.30,"Andrea","Carne de salud",10,true,0,false
+14.00,"Gabriel","Urgencia",15,false,0,false
+14.10,"Rocio","Carne de salud",10,true,0,false
+14.20,"Emilia","Emergencia",20,false,0,false
+14.30,"Tomas","Carne de salud",10,true,0,false
+15.00,"Lautaro","Urgencia",15,false,0,false
+15.10,"Milagros","Carne de salud",10,true,0,false
+15.20,"Santiago","Emergencia",20,false,0,false
+15.30,"Belen","Carne de salud",10,true,0,false
+16.00,"Franco","Urgencia",15,false,0,false
+16.10,"Sol","Carne de salud",10,true,0,false
+16.20,"Joaquin","Emergencia",20,false,0,false
+16.30,"Carla","Carne de salud",10,true,0,false
+17.00,"Lucas","Urgencia",15,false,0,false
+17.10,"Cecilia","Carne de salud",10,true,0,false
+17.20,"Matias","Emergencia",20,false,0,false
+17.30,"Aldana","Carne de salud",10,true,0,false
+18.00,"Diego","Urgencia",15,false,0,false
+18.10,"Victoria","Carne de salud",10,true,0,false
+18.20,"Benjamin","Emergencia",20,false,0,false
+18.30,"Pilar","Carne de salud",10,true,0,false
+19.00,"Facundo","Urgencia",15,false,0,false
+19.10,"Micaela","Carne de salud",10,true,0,false
+19.20,"Valentin","Emergencia",20,false,0,false
+19.30,"Noelia","Carne de salud",10,true,0,false

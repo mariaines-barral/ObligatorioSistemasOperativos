@@ -17,7 +17,7 @@ public class Clinica {
     public volatile int PacientesMuertos;
     public volatile int[] tiempoSimulado = new int[2];
 
-    // Recursos limitados
+    // Recursos
     public final Semaphore consultorioReservadoParaEmergencia = new Semaphore(1);
     public final Semaphore consultorioLibre = new Semaphore(1);
     public final Semaphore salaDeEnfermeria = new Semaphore(1);
@@ -34,7 +34,6 @@ public class Clinica {
 
     public final String archivoDePacientes;
 
-    // Control de simulación
     private volatile boolean clinicaAbierta = true;
 
     public class Reloj implements Runnable {
