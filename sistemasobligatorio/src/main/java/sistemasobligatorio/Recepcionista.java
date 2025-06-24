@@ -14,19 +14,20 @@ import java.io.IOException;
 
 class Recepcionista implements Runnable {
     private final Clinica clinica;
+    private final String nombre;
 
-    public Recepcionista(Clinica clinica) {
+    public Recepcionista(String nombre, Clinica clinica) {
         this.clinica = clinica;
+        this.nombre = nombre;
     }
 
     @Override
     public void run() {
-        System.out.println("Recepcionista trabajando: Gestionando llegadas de pacientes :)");
+        System.out.println("Recepcionista" + this.nombre + "trabajando: Gestionando cola de pacientes :)");
         cargarPacientesDelArchivo(clinica.archivoDePacientes);
         while (clinica.estaAbierta()) {
             try {
-                // El recepcionista puede hacer otras tareas como reasignar prioridades
-                Thread.sleep(5000); // Revisa cada 5 segundos
+                Thread.sleep(1000);
                 reasignarPrioridades();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -41,7 +42,7 @@ class Recepcionista implements Runnable {
             while ((linea = br.readLine()) != null) {
                 String[] datos = linea.split(",");
                 if (datos.length == 7) {
-                    String tiempo = datos[0]; // "8.10"
+                    String tiempo = datos[0];
                     String[] partes = tiempo.split("\\.");
                     int horaLlegada = Integer.parseInt(partes[0]);
                     int minutoLlegada = 0;
@@ -60,7 +61,7 @@ class Recepcionista implements Runnable {
                                 (tiempoActual[0] == horaLlegada && tiempoActual[1] >= minutoLlegada)) {
                             break;
                         }
-                        Thread.sleep(50);
+                        Thread.sleep(10);
                     }
 
                     if (!tieneInforme && motivo.equals("Carne de salud")) {
@@ -84,12 +85,17 @@ class Recepcionista implements Runnable {
         List<Paciente> pacientes = new ArrayList<>();
         clinica.colaPacientes.drainTo(pacientes);
 
-        // 2. Actualizar atributos que afectan la prioridad
+        // Actualizar tiempo de espera de los pacientes
         for (Paciente p : pacientes) {
             p.incrementarTiempoEsperando();
+            if (p.getTiempoDeEsperaAgotado()) {
+                clinica.incrementarMuertos();
+                System.out.println("Paciente " + p.getNombre() + " ha muerto esperando :'(");
+                pacientes.remove(p);
+            }
         }
 
-        // 3. Volver a insertar los pacientes en la cola
+        // Volver a insertar los pacientes en la cola ordenados por prioridad
         clinica.colaPacientes.addAll(pacientes);
     }
 }
