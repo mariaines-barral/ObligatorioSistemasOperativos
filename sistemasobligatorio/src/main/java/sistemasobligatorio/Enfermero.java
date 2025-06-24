@@ -75,4 +75,18 @@ class Enfermero implements Runnable {
     public boolean estaDisponible() {
         return disponible;
     }
+    
+    public void hacerAnalisis(Paciente paciente){
+           try {
+                System.out.println("Enfermero haciendo análisis de sangre y orina a " + paciente.getNombre());
+                Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
+                clinica.incrementarAtendidos();
+                System.out.println("Carné de salud completo para " + paciente.getNombre());
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } finally {
+                clinica.enfermeroDisponible.release();
+            }
+    }
 }
