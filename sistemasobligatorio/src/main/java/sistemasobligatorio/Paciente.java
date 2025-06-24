@@ -45,7 +45,6 @@ public class Paciente {
         return this.TiempoEsperando;
     }
 
-    // Esto hay que ver como se va actualizando y cada cuanto tiempo
     public void incrementarTiempoEsperando() {
         this.TiempoEsperando++;
         if (this.MotivoDeConsulta == "Urgencia" && this.TiempoEsperando >= 120) {

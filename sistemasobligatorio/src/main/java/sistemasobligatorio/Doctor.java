@@ -66,7 +66,7 @@ class Doctor implements Runnable {
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
 
             clinica.incrementarAtendidos();
-            System.out.println(paciente.getNombre() + " atendido exitosamente");
+            System.out.println(paciente.getNombre() + " atendido exitosamente :)");
 
         } finally {
             disponible = true;

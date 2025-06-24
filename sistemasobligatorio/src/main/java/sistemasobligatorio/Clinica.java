@@ -42,7 +42,7 @@ public class Clinica {
         public void run() {
             while (clinicaAbierta) {
                 try {
-                    Thread.sleep(50);
+                    Thread.sleep(100);
                     incrementarTiempo();
                 } catch (InterruptedException e) {
                     break;
@@ -51,7 +51,7 @@ public class Clinica {
         }
     }
 
-    public Clinica(String archivoPacientes) {
+    public Clinica(String archivoPacientes, String nombreDoctor, String nombreEnfermero, String nombreRecepcionista) {
         PacientesAtendidos = 0;
         PacientesRechazados = 0;
         PacientesMuertos = 0;
@@ -65,9 +65,9 @@ public class Clinica {
         ejecutorHilos = Executors.newFixedThreadPool(3);
 
         // Crear trabajadores
-        recepcionista = new Recepcionista(this);
-        doctor = new Doctor("Dr. García", this);
-        enfermero = new Enfermero("Enfermero López", this);
+        recepcionista = new Recepcionista(nombreRecepcionista, this);
+        doctor = new Doctor(nombreDoctor, this);
+        enfermero = new Enfermero(nombreEnfermero, this);
         archivoDePacientes = archivoPacientes;
 
         // Iniciar hilos
@@ -125,6 +125,10 @@ public class Clinica {
 
     public synchronized void incrementarRechazados() {
         PacientesRechazados++;
+    }
+
+    public synchronized void incrementarMuertos() {
+        PacientesMuertos++;
     }
 
     // Comparador para priorizar pacientes
