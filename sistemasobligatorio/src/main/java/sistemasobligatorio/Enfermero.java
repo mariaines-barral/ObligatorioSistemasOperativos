@@ -56,11 +56,11 @@ class Enfermero implements Runnable {
                     paciente.getNombre());
 
             // Simular análisis de sangre
-            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 50);
+            Thread.sleep(500);
             System.out.println("Análisis de sangre completado para " + paciente.getNombre());
 
             // Simular análisis de orina
-            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 50);
+            Thread.sleep(500);
             System.out.println("Análisis de orina completado para " + paciente.getNombre());
 
             clinica.incrementarAtendidos();
