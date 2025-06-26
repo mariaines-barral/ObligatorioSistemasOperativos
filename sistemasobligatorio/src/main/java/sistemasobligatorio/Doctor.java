@@ -111,12 +111,9 @@ class Doctor implements Runnable {
         System.out.println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
         disponible = true; // Cuando el doctor se libera termina su rol. y se puede llamar en otro sitio.
         clinica.enfermeroDisponible.acquire();
-
         clinica.consultorioLibre.release();
         Enfermero enfermero = clinica.getEnfermero();
-        enfermero.hacerAnalisis(paciente); // Con el paciente.
-        // metodo auxiliar del enfemero, lleme al paciente.
-
+        enfermero.atenderPaciente(paciente);
     }
 
     public boolean estaDisponible() {

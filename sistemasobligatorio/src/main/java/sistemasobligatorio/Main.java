@@ -12,10 +12,9 @@ import java.io.IOException;
 
 class Main {
     public static void main(String[] args) {
-        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\pacientesDelDia.txt",
+        Clinica clinica = new Clinica("sistemasobligatorio/src/main/java/sistemasobligatorio/pacientesDelDia.txt",
                 "Dr. House",
                 "Enfermero Stark", "Pam Beesly");
-
         try {
             Thread.sleep(30000);
         } catch (InterruptedException e) {

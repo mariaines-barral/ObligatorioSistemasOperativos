@@ -1,3 +1,0 @@
-8.00,"Juan","Urgencia",15,false,0,false
-8.10,"Ana","Emergencia",20,false,0,false
-8.15,"Pepe","Carne de salud",10,true,0,false

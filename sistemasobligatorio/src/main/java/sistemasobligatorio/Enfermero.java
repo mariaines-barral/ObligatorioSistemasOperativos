@@ -35,7 +35,7 @@ class Enfermero implements Runnable {
         }
     }
 
-    private void atenderPaciente(Paciente paciente) throws InterruptedException {
+    public void atenderPaciente(Paciente paciente) throws InterruptedException {
         String motivo = paciente.getMotivoDeConsulta();
 
         if ("Emergencia".equals(motivo) || "Urgencia".equals(motivo)) {
@@ -76,16 +76,4 @@ class Enfermero implements Runnable {
         return disponible;
     }
 
-    public void hacerAnalisis(Paciente paciente) {
-        try {
-            System.out.println("Enfermero haciendo análisis de sangre y orina a " + paciente.getNombre());
-            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
-            clinica.incrementarAtendidos();
-            System.out.println("Carné de salud completo para " + paciente.getNombre());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            clinica.enfermeroDisponible.release();
-        }
-    }
 }
