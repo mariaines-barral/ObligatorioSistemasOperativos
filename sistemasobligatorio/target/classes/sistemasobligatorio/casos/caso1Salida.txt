@@ -1,23 +1,29 @@
-Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
-Enfermero Stark trabajando - Esperando pacientes para atender :^)
 Dr. House trabajando - Esperando pacientes para atender B)
+Enfermero Stark trabajando - Esperando pacientes para atender :^)
+Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
 Paciente Lucia agregado a la cola
+Dr. House y el enfermero atendiendo Urgencia de Lucia
 Paciente Mario fue rechazado. No da el tiempo para atenderlo hoy.
+Lucia atendido exitosamente
 Paciente Sofia agregado a la cola
-Dr. House entrevistando a Sofia para el carné de salud.
-Entrevista completada. Enviando a análisis de sangre y orina a Sofia
-Enfermero haciendo análisis de sangre y orina a Sofia
-Carné de salud completo para Sofia
+Enfermero Stark realizando análisis de sangre y orina a Sofia
+Análisis de sangre completado para Sofia
+Análisis de orina completado para Sofia
+Carnet de salud completado para Sofia
 Hora actual: 9:00
 Paciente Carlos agregado a la cola
+Dr. House y el enfermero atendiendo Urgencia de Carlos
 Paciente Valentina agregado a la cola
-Dr. House entrevistando a Valentina para el carné de salud.
+Enfermero Stark realizando análisis de sangre y orina a Valentina
+Carlos atendido exitosamente
+Análisis de sangre completado para Valentina
 Paciente Pedro agregado a la cola
-Entrevista completada. Enviando a análisis de sangre y orina a Valentina
-Enfermero haciendo análisis de sangre y orina a Valentina
-Carné de salud completo para Valentina
+Dr. House y el enfermero atendiendo Emergencia de Pedro
+Análisis de orina completado para Valentina
+Carnet de salud completado para Valentina
 Paciente Marta agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Marta
+Pedro atendido exitosamente :)
 Análisis de sangre completado para Marta
 Análisis de orina completado para Marta
 Carnet de salud completado para Marta
@@ -26,8 +32,8 @@ Paciente Luis agregado a la cola
 Dr. House y el enfermero atendiendo Urgencia de Luis
 Paciente Florencia agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Florencia
-Análisis de sangre completado para Florencia
 Luis atendido exitosamente
+Análisis de sangre completado para Florencia
 Análisis de orina completado para Florencia
 Carnet de salud completado para Florencia
 Paciente Agustin agregado a la cola
@@ -46,10 +52,10 @@ Paciente Julieta agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Julieta
 Ramiro atendido exitosamente
 Análisis de sangre completado para Julieta
-Paciente Nicolas agregado a la cola
-Dr. House y el enfermero atendiendo Emergencia de Nicolas
 Análisis de orina completado para Julieta
 Carnet de salud completado para Julieta
+Paciente Nicolas agregado a la cola
+Dr. House y el enfermero atendiendo Emergencia de Nicolas
 Paciente Paula agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Paula
 Análisis de sangre completado para Paula
@@ -78,8 +84,8 @@ Paciente Gabriel agregado a la cola
 Dr. House y el enfermero atendiendo Urgencia de Gabriel
 Paciente Rocio agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Rocio
-Análisis de sangre completado para Rocio
 Gabriel atendido exitosamente
+Análisis de sangre completado para Rocio
 Análisis de orina completado para Rocio
 Carnet de salud completado para Rocio
 Paciente Emilia agregado a la cola
@@ -91,8 +97,8 @@ Emilia atendido exitosamente :)
 Análisis de orina completado para Tomas
 Carnet de salud completado para Tomas
 Hora actual: 15:00
-Dr. House y el enfermero atendiendo Urgencia de Lautaro
 Paciente Lautaro agregado a la cola
+Dr. House y el enfermero atendiendo Urgencia de Lautaro
 Paciente Milagros agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Milagros
 Lautaro atendido exitosamente
@@ -114,10 +120,10 @@ Paciente Sol agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Sol
 Franco atendido exitosamente
 Análisis de sangre completado para Sol
-Dr. House y el enfermero atendiendo Emergencia de Joaquin
-Paciente Joaquin agregado a la cola
 Análisis de orina completado para Sol
 Carnet de salud completado para Sol
+Paciente Joaquin agregado a la cola
+Dr. House y el enfermero atendiendo Emergencia de Joaquin
 Paciente Carla agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Carla
 Análisis de sangre completado para Carla
@@ -148,10 +154,10 @@ Paciente Victoria agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Victoria
 Diego atendido exitosamente
 Análisis de sangre completado para Victoria
-Paciente Benjamin agregado a la cola
-Dr. House y el enfermero atendiendo Emergencia de Benjamin
 Análisis de orina completado para Victoria
 Carnet de salud completado para Victoria
+Paciente Benjamin agregado a la cola
+Dr. House y el enfermero atendiendo Emergencia de Benjamin
 Paciente Pilar agregado a la cola
 Enfermero Stark realizando análisis de sangre y orina a Pilar
 Análisis de sangre completado para Pilar
@@ -159,10 +165,10 @@ Benjamin atendido exitosamente :)
 Análisis de orina completado para Pilar
 Carnet de salud completado para Pilar
 Hora actual: 19:00
-Dr. House y el enfermero atendiendo Urgencia de Facundo
 Paciente Facundo agregado a la cola
-Enfermero Stark realizando análisis de sangre y orina a Micaela
+Dr. House y el enfermero atendiendo Urgencia de Facundo
 Paciente Micaela agregado a la cola
+Enfermero Stark realizando análisis de sangre y orina a Micaela
 Facundo atendido exitosamente
 Análisis de sangre completado para Micaela
 Análisis de orina completado para Micaela
@@ -171,12 +177,14 @@ Paciente Valentin fue rechazado. No da el tiempo para atenderlo hoy.
 Paciente Noelia agregado a la cola
 Dr. House entrevistando a Noelia para el carné de salud.
 Entrevista completada. Enviando a análisis de sangre y orina a Noelia
-Enfermero haciendo análisis de sangre y orina a Noelia
-Carné de salud completo para Noelia
+Enfermero Stark realizando análisis de sangre y orina a Noelia
+Análisis de sangre completado para Noelia
+Análisis de orina completado para Noelia
+Carnet de salud completado para Noelia
 Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
-Pacientes atendidos: 38
+Pacientes atendidos: 41
 Pacientes rechazados: 2
 Pacientes muertos: 0

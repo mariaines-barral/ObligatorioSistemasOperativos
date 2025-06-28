@@ -1,0 +1,46 @@
+Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
+Dr. House trabajando - Esperando pacientes para atender B)
+Enfermero Stark trabajando - Esperando pacientes para atender :^)
+Paciente Juan agregado a la cola
+Dr. House y el enfermero atendiendo Emergencia de Juan
+Paciente Ana agregado a la cola
+Paciente Luis agregado a la cola
+Paciente Lucia agregado a la cola
+Paciente Bruno agregado a la cola
+Paciente Sofia agregado a la cola
+Paciente Carlos agregado a la cola
+Paciente Valentina agregado a la cola
+Paciente Mateo agregado a la cola
+Paciente Florencia agregado a la cola
+Juan atendido exitosamente :)
+Paciente Martin agregado a la cola
+Paciente Julieta agregado a la cola
+Dr. House y el enfermero atendiendo Emergencia de Julieta
+Paciente Nicolas agregado a la cola
+Paciente Camila agregado a la cola
+Paciente Ramiro agregado a la cola
+Paciente Paula agregado a la cola
+Paciente Federico agregado a la cola
+Paciente Martina agregado a la cola
+Paciente Andrea agregado a la cola
+Paciente Gabriel agregado a la cola
+Paciente Rocio agregado a la cola
+Julieta atendido exitosamente :)
+Hora actual: 9:00
+Hora actual: 10:00
+Hora actual: 11:00
+Hora actual: 12:00
+Hora actual: 13:00
+Hora actual: 14:00
+Hora actual: 15:00
+Hora actual: 16:00
+Hora actual: 17:00
+Hora actual: 18:00
+Hora actual: 19:00
+Hora actual: 20:00
+La clínica cerró por hoy. Nos vemos mañana!
+
+=== ESTADISTICAS FINALES ===
+Pacientes atendidos: 2
+Pacientes rechazados: 0
+Pacientes muertos: 0

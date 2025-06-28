@@ -1,0 +1,20 @@
+8.00,"Lucia","Urgencia",15,false,0,false
+8.01,"Juan","Emergencia",20,false,0,false
+8.02,"Sofia","Carne de salud",10,true,0,false
+8.03,"Pedro","Urgencia",15,false,0,false
+8.04,"Ana","Emergencia",720,false,0,false
+8.05,"Valentina","Carne de salud",10,true,0,false
+8.06,"Carlos","Urgencia",15,false,0,false
+8.07,"Bruno","Emergencia",20,false,0,false
+8.08,"Florencia","Carne de salud",10,true,0,false
+8.09,"Luis","Urgencia",15,false,0,false
+8.10,"Camila","Carne de salud",10,true,0,false
+8.11,"Ramiro","Emergencia",20,false,0,false
+8.12,"Julieta","Carne de salud",10,true,0,false
+8.13,"Nicolas","Urgencia",15,false,0,false
+8.14,"Paula","Carne de salud",10,true,0,false
+8.15,"Federico","Emergencia",20,false,0,false
+8.16,"Martina","Carne de salud",10,true,0,false
+8.17,"Gabriel","Urgencia",15,false,0,false
+8.18,"Rocio","Carne de salud",10,true,0,false
+8.19,"Emilia","Emergencia",20,false,0,false
