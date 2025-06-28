@@ -41,7 +41,7 @@ public class Clinica {
         public void run() {
             while (clinicaAbierta) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(20);
                     incrementarTiempo();
                 } catch (InterruptedException e) {
                     break;
@@ -61,7 +61,7 @@ public class Clinica {
         colaPacientes = new PriorityBlockingQueue<>(100, new ComparadorPrioridad());
 
         // Pool de hilos
-        ejecutorHilos = Executors.newFixedThreadPool(3);
+        ejecutorHilos = Executors.newFixedThreadPool(4);
 
         // Crear trabajadores
         recepcionista = new Recepcionista(nombreRecepcionista, this);
@@ -73,8 +73,8 @@ public class Clinica {
         ejecutorHilos.submit(recepcionista);
         ejecutorHilos.submit(doctor);
         ejecutorHilos.submit(enfermero);
+        ejecutorHilos.submit(new Reloj());
 
-        iniciarRelojSimulado();
     }
 
     public synchronized int[] getTiempoSimulado() {
@@ -93,11 +93,6 @@ public class Clinica {
         if (tiempoSimulado[0] == 20 && tiempoSimulado[1] == 0) {
             cerrarClinica();
         }
-    }
-
-    private void iniciarRelojSimulado() {
-        Thread reloj = new Thread(new Reloj());
-        reloj.start();
     }
 
     public void agregarPaciente(Paciente paciente) {
