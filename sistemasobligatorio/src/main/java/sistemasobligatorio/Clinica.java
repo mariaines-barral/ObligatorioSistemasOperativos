@@ -72,7 +72,7 @@ public class Clinica {
         // Iniciar hilos
         ejecutorHilos.submit(recepcionista);
         ejecutorHilos.submit(doctor);
-        // ejecutorHilos.submit(enfermero);
+        ejecutorHilos.submit(enfermero);
         ejecutorHilos.submit(new Reloj());
 
     }
@@ -107,7 +107,9 @@ public class Clinica {
     public void cerrarClinica() {
         clinicaAbierta = false;
         System.out.println("La clínica cerró por hoy. Nos vemos mañana!");
-        ejecutorHilos.shutdown();
+      //  ejecutorHilos.shutdown();
+      //  ejecutorHilos.close();
+        ejecutorHilos.shutdownNow();
 
         System.out.println("\n=== ESTADISTICAS FINALES ===");
         System.out.println("Pacientes atendidos: " + PacientesAtendidos);

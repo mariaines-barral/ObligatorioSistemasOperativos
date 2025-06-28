@@ -60,7 +60,7 @@ class Doctor implements Runnable {
         try {
             disponible = false;
             System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
-                    " de " + paciente.getNombre());
+                " de " + paciente.getNombre());
 
             // Simular atención conjunta (doctor + enfermero)
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
@@ -87,7 +87,7 @@ class Doctor implements Runnable {
         try {
             disponible = false;
             System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
-                    " de " + paciente.getNombre());
+                " de " + paciente.getNombre());
 
             // Simular atención conjunta (doctor + enfermero)
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
@@ -103,20 +103,35 @@ class Doctor implements Runnable {
     }
 
     private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
-        clinica.consultorioLibre.acquire();
-        disponible = false; // deberia ser un semaphore si se implementa con varios doctores.
-        System.out.println(nombre + " entrevistando a " + paciente.getNombre() + " para el carné de salud.");
-        // Simular entrevista
-        Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
-        System.out.println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
-        disponible = true; // Cuando el doctor se libera termina su rol. y se puede llamar en otro sitio.
-        clinica.enfermeroDisponible.acquire();
-        clinica.consultorioLibre.release();
-        Enfermero enfermero = clinica.getEnfermero();
-        enfermero.atenderPaciente(paciente);
+
+            clinica.consultorioLibre.acquire();
+            try {
+                disponible = false;
+                System.out.println(nombre + " entrevistando a " + paciente.getNombre() + " para el carné de salud.");
+                Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
+                System.out.println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
+
+                // Liberar consultorio antes de pasar al enfermero
+                clinica.consultorioLibre.release();
+
+                // Ahora el enfermero hace su trabajo
+                clinica.enfermeroDisponible.acquire();
+                try {
+                    Enfermero enfermero = clinica.getEnfermero();
+                    enfermero.atenderPaciente(paciente);
+                } finally {
+                    clinica.enfermeroDisponible.release();
+                }
+
+            } finally {
+                disponible = true;
+                // El consultorio ya se liberó arriba
+            }
+        }
+
+
+        public boolean estaDisponible() {
+            return disponible;
+        }
     }
 
-    public boolean estaDisponible() {
-        return disponible;
-    }
-}
