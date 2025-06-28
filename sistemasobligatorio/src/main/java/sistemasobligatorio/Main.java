@@ -14,14 +14,14 @@ import java.io.PrintStream;
 
 class Main {
     public static void main(String[] args) {
-        String rutaSalida = "";
+        String rutaSalida = "sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\casoBaseSalida.txt";
         try {
             PrintStream archivoSalida = new PrintStream(rutaSalida);
             System.setOut(archivoSalida);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Clinica clinica = new Clinica("",
+        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\casoBaseEntrada.txt",
                 "Dr. House",
                 "Enfermero Stark", "Pam Beesly");
         clinica.esperarCierre();
