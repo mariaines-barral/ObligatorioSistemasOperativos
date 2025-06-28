@@ -1,142 +1,181 @@
-Dr. House trabajando - Esperando pacientes para atender B)
-Enfermero Stark trabajando - Esperando pacientes para atender :^)
 Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
+Dr. House trabajando - Esperando pacientes para atender B)
 Paciente Lucia agregado a la cola
 Dr. House y el enfermero atendiendo Urgencia de Lucia
 Paciente Mario fue rechazado. No da el tiempo para atenderlo hoy.
-Paciente Sofia agregado a la cola
-Enfermero Stark realizando análisis de sangre y orina a Sofia
+Lucia atendido exitosamente
 Hora actual: 9:00
 Paciente Carlos agregado a la cola
-Análisis de sangre completado para Sofia
+Dr. House y el enfermero atendiendo Urgencia de Carlos
 Paciente Valentina agregado a la cola
+Carlos atendido exitosamente
+Dr. House entrevistando a Valentina para el carné de salud.
 Paciente Pedro agregado a la cola
-Lucia atendido exitosamente
-Dr. House y el enfermero atendiendo Emergencia de Pedro
-Análisis de orina completado para Sofia
-Carnet de salud completado para Sofia
-Enfermero Stark realizando análisis de sangre y orina a Valentina
+Entrevista completada. Enviando a análisis de sangre y orina a Valentina
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
 Paciente Marta agregado a la cola
-Análisis de sangre completado para Valentina
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Emergencia de Pedro
+Pedro atendido exitosamente :)
+Dr. House entrevistando a Marta para el carné de salud.
 Hora actual: 10:00
 Paciente Luis agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Marta
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
 Paciente Florencia agregado a la cola
-Análisis de orina completado para Valentina
-Carnet de salud completado para Valentina
-Enfermero Stark realizando análisis de sangre y orina a Florencia
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Luis
 Paciente Agustin agregado a la cola
-Paciente Camila agregado a la cola
-Análisis de sangre completado para Florencia
-Pedro atendido exitosamente :)
+Luis atendido exitosamente
 Dr. House y el enfermero atendiendo Emergencia de Agustin
+Paciente Camila agregado a la cola
+Agustin atendido exitosamente :)
+Dr. House entrevistando a Florencia para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Florencia
+Enfermero Stark realizando análisis...
 Hora actual: 11:00
-Análisis de orina completado para Florencia
-Carnet de salud completado para Florencia
-Enfermero Stark realizando análisis de sangre y orina a Camila
-Análisis de sangre completado para Camila
-Análisis de orina completado para Camila
-Carnet de salud completado para Camila
-Enfermero Stark realizando análisis de sangre y orina a Marta
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House entrevistando a Camila para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Camila
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
+Análisis de orina completado...
 Hora actual: 12:00
 Paciente Ramiro agregado a la cola
+Dr. House y el enfermero atendiendo Urgencia de Ramiro
 Paciente Julieta agregado a la cola
-Análisis de sangre completado para Marta
+Ramiro atendido exitosamente
+Dr. House entrevistando a Julieta para el carné de salud.
 Paciente Nicolas agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Julieta
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
 Paciente Paula agregado a la cola
-Agustin atendido exitosamente :)
+Análisis de orina completado...
 Dr. House y el enfermero atendiendo Emergencia de Nicolas
-Análisis de orina completado para Marta
-Carnet de salud completado para Marta
-Enfermero Stark realizando análisis de sangre y orina a Paula
+Nicolas atendido exitosamente :)
+Dr. House entrevistando a Paula para el carné de salud.
 Hora actual: 13:00
 Paciente Federico agregado a la cola
-Análisis de sangre completado para Paula
+Entrevista completada. Enviando a análisis de sangre y orina a Paula
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
 Paciente Martina agregado a la cola
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Federico
 Paciente Bruno agregado a la cola
-Análisis de orina completado para Paula
-Carnet de salud completado para Paula
-Enfermero Stark realizando análisis de sangre y orina a Martina
+Federico atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Bruno
 Paciente Andrea agregado a la cola
-Análisis de sangre completado para Martina
+Bruno atendido exitosamente :)
+Dr. House entrevistando a Martina para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Martina
+Enfermero Stark realizando análisis...
 Hora actual: 14:00
 Paciente Gabriel agregado a la cola
-Nicolas atendido exitosamente :)
+Análisis de sangre completado...
+Análisis de orina completado...
 Dr. House y el enfermero atendiendo Urgencia de Gabriel
 Paciente Rocio agregado a la cola
-Análisis de orina completado para Martina
-Carnet de salud completado para Martina
-Enfermero Stark realizando análisis de sangre y orina a Julieta
 Paciente Emilia agregado a la cola
-Paciente Tomas agregado a la cola
-Análisis de sangre completado para Julieta
-Hora actual: 15:00
-Paciente Lautaro agregado a la cola
-Análisis de orina completado para Julieta
-Carnet de salud completado para Julieta
-Enfermero Stark realizando análisis de sangre y orina a Tomas
-Paciente Milagros agregado a la cola
-Paciente Santiago agregado a la cola
 Gabriel atendido exitosamente
-Dr. House y el enfermero atendiendo Emergencia de Santiago
+Dr. House y el enfermero atendiendo Emergencia de Emilia
+Paciente Tomas agregado a la cola
+Emilia atendido exitosamente :)
+Dr. House entrevistando a Andrea para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Andrea
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
+Análisis de orina completado...
+Hora actual: 15:00
+Dr. House entrevistando a Tomas para el carné de salud.
+Paciente Lautaro agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Tomas
+Enfermero Stark realizando análisis...
+Paciente Milagros agregado a la cola
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Lautaro
+Paciente Santiago agregado a la cola
 Paciente Belen agregado a la cola
-Análisis de sangre completado para Tomas
-Análisis de orina completado para Tomas
-Carnet de salud completado para Tomas
-Enfermero Stark realizando análisis de sangre y orina a Andrea
+Lautaro atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Santiago
+Santiago atendido exitosamente :)
+Dr. House entrevistando a Belen para el carné de salud.
 Hora actual: 16:00
 Paciente Franco agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Belen
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
 Paciente Sol agregado a la cola
-Análisis de sangre completado para Andrea
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Franco
 Paciente Joaquin agregado a la cola
+Franco atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Joaquin
 Paciente Carla agregado a la cola
-Análisis de orina completado para Andrea
-Carnet de salud completado para Andrea
-Enfermero Stark realizando análisis de sangre y orina a Milagros
-Santiago atendido exitosamente :)
-Dr. House entrevistando a Sol para el carné de salud.
+Joaquin atendido exitosamente :)
+Dr. House entrevistando a Rocio para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Rocio
+Enfermero Stark realizando análisis...
 Hora actual: 17:00
 Paciente Lucas agregado a la cola
-Análisis de sangre completado para Milagros
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Lucas
 Paciente Cecilia agregado a la cola
 Paciente Matias agregado a la cola
+Lucas atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Matias
 Paciente Aldana agregado a la cola
-Análisis de orina completado para Milagros
-Carnet de salud completado para Milagros
-Enfermero Stark realizando análisis de sangre y orina a Carla
-Entrevista completada. Enviando a análisis de sangre y orina a Sol
-Análisis de sangre completado para Carla
+Matias atendido exitosamente :)
+Dr. House entrevistando a Carla para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Carla
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House entrevistando a Aldana para el carné de salud.
 Hora actual: 18:00
 Paciente Diego agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Aldana
+Enfermero Stark realizando análisis...
 Paciente Victoria agregado a la cola
-Análisis de orina completado para Carla
-Carnet de salud completado para Carla
-Enfermero Stark realizando análisis de sangre y orina a Victoria
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Diego
 Paciente Benjamin agregado a la cola
 Paciente Pilar agregado a la cola
-Análisis de sangre completado para Victoria
+Diego atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Benjamin
+Benjamin atendido exitosamente :)
+Dr. House entrevistando a Pilar para el carné de salud.
 Hora actual: 19:00
-Paciente Facundo fue rechazado. No da el tiempo para atenderlo hoy.
-Análisis de orina completado para Victoria
-Carnet de salud completado para Victoria
-Enfermero Stark realizando análisis de sangre y orina a Pilar
-Paciente Micaela agregado a la cola
+Paciente Facundo agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Pilar
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
+Paciente Micaela fue rechazado. No da el tiempo para atenderlo hoy.
+Análisis de orina completado...
+Dr. House y el enfermero atendiendo Urgencia de Facundo
 Paciente Valentin fue rechazado. No da el tiempo para atenderlo hoy.
+Facundo atendido exitosamente
+Dr. House entrevistando a Victoria para el carné de salud.
 Paciente Noelia fue rechazado. No da el tiempo para atenderlo hoy.
-Análisis de sangre completado para Pilar
-Análisis de orina completado para Pilar
-Carnet de salud completado para Pilar
-Enfermero Stark realizando análisis de sangre y orina a Cecilia
+Entrevista completada. Enviando a análisis de sangre y orina a Victoria
+Enfermero Stark realizando análisis...
+Análisis de sangre completado...
+Análisis de orina completado...
+Dr. House entrevistando a Sol para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Sol
+Enfermero Stark realizando análisis...
 Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
-Pacientes atendidos: 20
+Pacientes atendidos: 35
 Pacientes rechazados: 4
 Pacientes muertos: 0
-Análisis de sangre completado para Cecilia
-Análisis de orina completado para Cecilia
-Carnet de salud completado para Cecilia
-Enfermero Stark realizando análisis de sangre y orina a Sol
-Análisis de sangre completado para Sol
-Análisis de orina completado para Sol
-Carnet de salud completado para Sol
+Enfermero Stark fue interrumpido durante el análisis de Sol

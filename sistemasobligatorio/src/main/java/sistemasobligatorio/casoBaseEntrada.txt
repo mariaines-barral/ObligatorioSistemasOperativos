@@ -1,6 +1,5 @@
 8.20,"Lucia","Urgencia",12,false,0,false
 8.25,"Mario","Emergencia",720,false,0,false
-8.40,"Sofia","Carne de salud",10,true,0,false
 9.00,"Carlos","Urgencia",15,false,0,false
 9.10,"Valentina","Carne de salud",10,true,0,false
 9.15,"Pedro","Emergencia",20,false,0,false
