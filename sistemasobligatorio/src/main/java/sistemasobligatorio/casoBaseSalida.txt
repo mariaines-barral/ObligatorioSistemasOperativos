@@ -1,6 +1,6 @@
-Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
 Dr. House trabajando - Esperando pacientes para atender B)
 Enfermero Stark trabajando - Esperando pacientes para atender :^)
+Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
 Paciente Lucia agregado a la cola
 Dr. House y el enfermero atendiendo Urgencia de Lucia
 Paciente Mario fue rechazado. No da el tiempo para atenderlo hoy.
@@ -75,39 +75,41 @@ Análisis de orina completado para Julieta
 Carnet de salud completado para Julieta
 Enfermero Stark realizando análisis de sangre y orina a Tomas
 Paciente Milagros agregado a la cola
-Gabriel atendido exitosamente
-Dr. House entrevistando a Rocio para el carné de salud.
 Paciente Santiago agregado a la cola
-Análisis de sangre completado para Tomas
+Gabriel atendido exitosamente
+Dr. House y el enfermero atendiendo Emergencia de Santiago
 Paciente Belen agregado a la cola
+Análisis de sangre completado para Tomas
 Análisis de orina completado para Tomas
 Carnet de salud completado para Tomas
-Enfermero Stark realizando análisis de sangre y orina a Belen
+Enfermero Stark realizando análisis de sangre y orina a Andrea
 Hora actual: 16:00
 Paciente Franco agregado a la cola
-Entrevista completada. Enviando a análisis de sangre y orina a Rocio
 Paciente Sol agregado a la cola
-Análisis de sangre completado para Belen
+Análisis de sangre completado para Andrea
 Paciente Joaquin agregado a la cola
 Paciente Carla agregado a la cola
-Análisis de orina completado para Belen
-Carnet de salud completado para Belen
-Enfermero Stark realizando análisis de sangre y orina a Andrea
-Hora actual: 17:00
-Paciente Lucas agregado a la cola
-Análisis de sangre completado para Andrea
-Paciente Cecilia agregado a la cola
-Paciente Matias agregado a la cola
-Paciente Aldana agregado a la cola
 Análisis de orina completado para Andrea
 Carnet de salud completado para Andrea
 Enfermero Stark realizando análisis de sangre y orina a Milagros
+Santiago atendido exitosamente :)
+Dr. House entrevistando a Sol para el carné de salud.
+Hora actual: 17:00
+Paciente Lucas agregado a la cola
 Análisis de sangre completado para Milagros
+Paciente Cecilia agregado a la cola
+Paciente Matias agregado a la cola
+Paciente Aldana agregado a la cola
+Análisis de orina completado para Milagros
+Carnet de salud completado para Milagros
+Enfermero Stark realizando análisis de sangre y orina a Carla
+Entrevista completada. Enviando a análisis de sangre y orina a Sol
+Análisis de sangre completado para Carla
 Hora actual: 18:00
 Paciente Diego agregado a la cola
 Paciente Victoria agregado a la cola
-Análisis de orina completado para Milagros
-Carnet de salud completado para Milagros
+Análisis de orina completado para Carla
+Carnet de salud completado para Carla
 Enfermero Stark realizando análisis de sangre y orina a Victoria
 Paciente Benjamin agregado a la cola
 Paciente Pilar agregado a la cola
@@ -128,13 +130,13 @@ Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
-Pacientes atendidos: 19
+Pacientes atendidos: 20
 Pacientes rechazados: 4
 Pacientes muertos: 0
 Análisis de sangre completado para Cecilia
 Análisis de orina completado para Cecilia
 Carnet de salud completado para Cecilia
-Enfermero Stark realizando análisis de sangre y orina a Rocio
-Análisis de sangre completado para Rocio
-Análisis de orina completado para Rocio
-Carnet de salud completado para Rocio
+Enfermero Stark realizando análisis de sangre y orina a Sol
+Análisis de sangre completado para Sol
+Análisis de orina completado para Sol
+Carnet de salud completado para Sol

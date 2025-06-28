@@ -24,6 +24,6 @@ class Main {
         Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\casoBaseEntrada.txt",
                 "Dr. House",
                 "Enfermero Stark", "Pam Beesly");
-
+        clinica.esperarCierre();
     }
 }

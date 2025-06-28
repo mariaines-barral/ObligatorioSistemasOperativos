@@ -171,6 +171,14 @@ public class Clinica {
         }
     }
 
+    public void esperarCierre() {
+        try {
+            ejecutorHilos.awaitTermination(Long.MAX_VALUE, java.util.concurrent.TimeUnit.NANOSECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public Enfermero getEnfermero() {
         return enfermero;
     }
