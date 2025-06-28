@@ -5,6 +5,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -29,7 +30,7 @@ public class Clinica {
     // Hilos trabajadores
     private final ExecutorService ejecutorHilos;
     private final Recepcionista recepcionista;
-    private final Doctor doctor;
+    private final ArrayList<Doctor> doctores;
     private final Enfermero enfermero;
 
     public final String archivoDePacientes;
@@ -41,7 +42,7 @@ public class Clinica {
         public void run() {
             while (clinicaAbierta) {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(50);
                     incrementarTiempo();
                 } catch (InterruptedException e) {
                     break;
@@ -50,29 +51,31 @@ public class Clinica {
         }
     }
 
-    public Clinica(String archivoPacientes, String nombreDoctor, String nombreEnfermero, String nombreRecepcionista) {
+    public Clinica(String archivoPacientes, String[] nombresDoctores, String nombreEnfermero,
+            String nombreRecepcionista) {
         PacientesAtendidos = 0;
         PacientesRechazados = 0;
         PacientesMuertos = 0;
         tiempoSimulado[0] = 8;
         tiempoSimulado[1] = 0;
 
-        // Cola única con comparador de prioridad
         colaPacientes = new PriorityBlockingQueue<>(100, new ComparadorPrioridad());
 
-        // Pool de hilos
-        ejecutorHilos = Executors.newFixedThreadPool(4);
-
-        // Crear trabajadores
         recepcionista = new Recepcionista(nombreRecepcionista, this);
-        doctor = new Doctor(nombreDoctor, this);
+        doctores = new ArrayList<Doctor>();
+        for (String nombre : nombresDoctores) {
+            doctores.add(new Doctor(nombre, this));
+        }
         enfermero = new Enfermero(nombreEnfermero, this);
         archivoDePacientes = archivoPacientes;
 
-        // Iniciar hilos
+        ejecutorHilos = Executors.newFixedThreadPool(3 + doctores.size());
+
         ejecutorHilos.submit(recepcionista);
-        ejecutorHilos.submit(doctor);
         ejecutorHilos.submit(new Reloj());
+        for (Doctor doctor : doctores) {
+            ejecutorHilos.submit(doctor);
+        }
 
     }
 
@@ -84,7 +87,7 @@ public class Clinica {
         if (tiempoSimulado[1] == 59) {
             tiempoSimulado[0]++;
             tiempoSimulado[1] = 0;
-            System.out.println("Hora actual: " + tiempoSimulado[0] + ":" + tiempoSimulado[1] + "0");
+            System.out.println("\nHora actual: " + tiempoSimulado[0] + ":" + tiempoSimulado[1] + "0");
         } else {
             tiempoSimulado[1]++;
         }
@@ -100,15 +103,16 @@ public class Clinica {
     }
 
     public Paciente tomarPaciente() throws InterruptedException {
-        return colaPacientes.take(); // Bloquea hasta que haya un paciente
+        return colaPacientes.take();
     }
 
     public void cerrarClinica() {
         clinicaAbierta = false;
         System.out.println("La clínica cerró por hoy. Nos vemos mañana!");
-      //  ejecutorHilos.shutdown();
-      //  ejecutorHilos.close();
+
         ejecutorHilos.shutdownNow();
+
+        recepcionista.reasignarPrioridades();
 
         System.out.println("\n=== ESTADISTICAS FINALES ===");
         System.out.println("Pacientes atendidos: " + PacientesAtendidos);

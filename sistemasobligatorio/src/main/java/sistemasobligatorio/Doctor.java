@@ -48,21 +48,19 @@ class Doctor implements Runnable {
     }
 
     private void atenderEmergencia(Paciente paciente) throws InterruptedException {
-        // Necesita consultorio y colaboración con enfermero
         boolean usoConsultorioNormal = false;
         if (clinica.consultorioLibre.tryAcquire()) {
             usoConsultorioNormal = true;
         } else {
             clinica.consultorioReservadoParaEmergencia.acquire();
         }
-        clinica.enfermeroDisponible.acquire(); // Espera a que el enfermero esté libre
+        clinica.enfermeroDisponible.acquire();
 
         try {
             disponible = false;
-            System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
-                " de " + paciente.getNombre());
+            System.out.println(nombre + " atendiendo " + paciente.getMotivoDeConsulta() +
+                    " de " + paciente.getNombre() + " junto al enfermero.");
 
-            // Simular atención conjunta (doctor + enfermero)
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
 
             clinica.incrementarAtendidos();
@@ -70,7 +68,7 @@ class Doctor implements Runnable {
 
         } finally {
             disponible = true;
-            clinica.enfermeroDisponible.release(); // Libera al enfermero
+            clinica.enfermeroDisponible.release();
             if (usoConsultorioNormal) {
                 clinica.consultorioLibre.release();
             } else {
@@ -80,14 +78,13 @@ class Doctor implements Runnable {
     }
 
     private void atenderUrgencia(Paciente paciente) throws InterruptedException {
-        // Necesita consultorio y colaboración con enfermero
         clinica.consultorioLibre.acquire();
-        clinica.enfermeroDisponible.acquire(); // Espera a que el enfermero esté libre
+        clinica.enfermeroDisponible.acquire();
 
         try {
             disponible = false;
-            System.out.println(nombre + " y el enfermero atendiendo " + paciente.getMotivoDeConsulta() +
-                " de " + paciente.getNombre());
+            System.out.println(nombre + " atendiendo " + paciente.getMotivoDeConsulta() +
+                    " de " + paciente.getNombre() + " junto al enfermero.");
 
             // Simular atención conjunta (doctor + enfermero)
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
@@ -104,34 +101,30 @@ class Doctor implements Runnable {
 
     private void atenderCarnetSalud(Paciente paciente) throws InterruptedException {
 
-            clinica.consultorioLibre.acquire();
+        clinica.consultorioLibre.acquire();
+        try {
+            disponible = false;
+            System.out.println(nombre + " entrevistando a " + paciente.getNombre() + " para el carné de salud.");
+            Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
+            System.out
+                    .println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
+
+            clinica.consultorioLibre.release();
+
+            clinica.enfermeroDisponible.acquire();
             try {
-                disponible = false;
-                System.out.println(nombre + " entrevistando a " + paciente.getNombre() + " para el carné de salud.");
-                Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
-                System.out.println("Entrevista completada. Enviando a análisis de sangre y orina a " + paciente.getNombre());
-
-                // Liberar consultorio antes de pasar al enfermero
-                clinica.consultorioLibre.release();
-
-                // Ahora el enfermero hace su trabajo
-                clinica.enfermeroDisponible.acquire();
-                try {
-                    Enfermero enfermero = clinica.getEnfermero();
-                    enfermero.atenderPaciente(paciente);
-                } finally {
-                    clinica.enfermeroDisponible.release();
-                }
-
+                Enfermero enfermero = clinica.getEnfermero();
+                enfermero.atenderPaciente(paciente);
             } finally {
-                disponible = true;
-                // El consultorio ya se liberó arriba
+                clinica.enfermeroDisponible.release();
             }
-        }
 
-
-        public boolean estaDisponible() {
-            return disponible;
+        } finally {
+            disponible = true;
         }
     }
 
+    public boolean estaDisponible() {
+        return disponible;
+    }
+}

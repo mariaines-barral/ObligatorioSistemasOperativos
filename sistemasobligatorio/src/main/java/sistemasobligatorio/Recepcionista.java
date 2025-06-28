@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -25,15 +26,7 @@ class Recepcionista implements Runnable {
     public void run() {
         System.out.println("Recepcionista " + this.nombre + " trabajando: Gestionando cola de pacientes :)");
         cargarPacientesDelArchivo(clinica.archivoDePacientes);
-        while (clinica.estaAbierta()) {
-            try {
-                Thread.sleep(1000);
-                reasignarPrioridades();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                break;
-            }
-        }
+
     }
 
     public void cargarPacientesDelArchivo(String archivo) {
@@ -67,9 +60,11 @@ class Recepcionista implements Runnable {
                     if (clinica.getTiempoDeCola() + tiempoConsulta > clinica.getTiempoRestante()) {
                         clinica.incrementarRechazados();
                         System.out.println(
-                                "Paciente " + nombre + " fue rechazado. No da el tiempo para atenderlo hoy.");
+                                "Paciente " + nombre +
+                                        " fue rechazado. No da el tiempo para atenderlo hoy.");
                         continue;
                     }
+
                     if (!tieneInforme && motivo.equals("Carne de salud")) {
                         clinica.incrementarRechazados();
                         System.out.println("Paciente " + nombre + " fue rechazado por no traer examen odontológico.");
@@ -79,6 +74,15 @@ class Recepcionista implements Runnable {
                             tieneInforme, tiempoEsperando, tiempoAgotado);
 
                     clinica.agregarPaciente(paciente);
+                    if (clinica.estaAbierta()) {
+                        try {
+                            Thread.sleep(1000);
+                            reasignarPrioridades();
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            break;
+                        }
+                    }
                 }
             }
         } catch (IOException | InterruptedException e) {
@@ -87,21 +91,21 @@ class Recepcionista implements Runnable {
 
     }
 
-    private void reasignarPrioridades() {
+    public void reasignarPrioridades() {
         List<Paciente> pacientes = new ArrayList<>();
         clinica.colaPacientes.drainTo(pacientes);
 
-        // Actualizar tiempo de espera de los pacientes
-        for (Paciente p : pacientes) {
+        Iterator<Paciente> it = pacientes.iterator();
+        while (it.hasNext()) {
+            Paciente p = it.next();
             p.incrementarTiempoEsperando();
             if (p.getTiempoDeEsperaAgotado()) {
                 clinica.incrementarMuertos();
                 System.out.println("Paciente " + p.getNombre() + " ha muerto esperando :'(");
-                pacientes.remove(p);
+                it.remove();
             }
         }
 
-        // Volver a insertar los pacientes en la cola ordenados por prioridad
         clinica.colaPacientes.addAll(pacientes);
     }
 }
