@@ -39,7 +39,6 @@ class Enfermero implements Runnable {
         String motivo = paciente.getMotivoDeConsulta();
 
         if ("Emergencia".equals(motivo) || "Urgencia".equals(motivo)) {
-            // Ya está siendo atendido junto con el doctor
             return;
         } else if ("Carne de salud".equals(motivo)) {
             realizarAnalisis(paciente);
@@ -47,7 +46,6 @@ class Enfermero implements Runnable {
     }
 
     private void realizarAnalisis(Paciente paciente) throws InterruptedException {
-        // Necesita sala de enfermería
         clinica.salaDeEnfermeria.acquire();
 
         try {
@@ -55,11 +53,9 @@ class Enfermero implements Runnable {
             System.out.println(nombre + " realizando análisis de sangre y orina a " +
                     paciente.getNombre());
 
-            // Simular análisis de sangre
             Thread.sleep(500);
             System.out.println("Análisis de sangre completado para " + paciente.getNombre());
 
-            // Simular análisis de orina
             Thread.sleep(500);
             System.out.println("Análisis de orina completado para " + paciente.getNombre());
 
