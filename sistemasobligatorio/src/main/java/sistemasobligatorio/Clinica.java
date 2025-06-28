@@ -72,7 +72,6 @@ public class Clinica {
         // Iniciar hilos
         ejecutorHilos.submit(recepcionista);
         ejecutorHilos.submit(doctor);
-        ejecutorHilos.submit(enfermero);
         ejecutorHilos.submit(new Reloj());
 
     }

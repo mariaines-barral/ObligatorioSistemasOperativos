@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class Enfermero  implements Runnable {
+class Enfermero    {
     private final String nombre;
     private final Clinica clinica;
     private volatile boolean disponible = true;
@@ -20,8 +20,7 @@ class Enfermero  implements Runnable {
         this.clinica = clinica;
     }
 
-    @Override
-    public void run() {}
+
     /*
      * @Override
      * public void run() {
