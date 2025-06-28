@@ -41,7 +41,7 @@ public class Clinica {
         public void run() {
             while (clinicaAbierta) {
                 try {
-                    Thread.sleep(20);
+                    Thread.sleep(100);
                     incrementarTiempo();
                 } catch (InterruptedException e) {
                     break;
@@ -72,7 +72,7 @@ public class Clinica {
         // Iniciar hilos
         ejecutorHilos.submit(recepcionista);
         ejecutorHilos.submit(doctor);
-        ejecutorHilos.submit(enfermero);
+        // ejecutorHilos.submit(enfermero);
         ejecutorHilos.submit(new Reloj());
 
     }

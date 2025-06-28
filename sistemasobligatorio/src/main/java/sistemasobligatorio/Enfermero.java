@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class Enfermero implements Runnable {
+class Enfermero {// implements Runnable {
     private final String nombre;
     private final Clinica clinica;
     private volatile boolean disponible = true;
@@ -20,20 +20,23 @@ class Enfermero implements Runnable {
         this.clinica = clinica;
     }
 
-    @Override
-    public void run() {
-        System.out.println(nombre + " trabajando - Esperando pacientes para atender :^)");
-
-        while (clinica.estaAbierta()) {
-            try {
-                Paciente paciente = clinica.tomarPaciente();
-                atenderPaciente(paciente);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                break;
-            }
-        }
-    }
+    /*
+     * @Override
+     * public void run() {
+     * System.out.println(nombre +
+     * " trabajando - Esperando pacientes para atender :^)");
+     * 
+     * while (clinica.estaAbierta()) {
+     * try {
+     * Paciente paciente = clinica.tomarPaciente();
+     * atenderPaciente(paciente);
+     * } catch (InterruptedException e) {
+     * Thread.currentThread().interrupt();
+     * break;
+     * }
+     * }
+     * }
+     */
 
     public void atenderPaciente(Paciente paciente) throws InterruptedException {
         String motivo = paciente.getMotivoDeConsulta();
