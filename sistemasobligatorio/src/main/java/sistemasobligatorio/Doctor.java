@@ -86,7 +86,6 @@ class Doctor implements Runnable {
             System.out.println(nombre + " atendiendo " + paciente.getMotivoDeConsulta() +
                     " de " + paciente.getNombre() + " junto al enfermero.");
 
-            // Simular atención conjunta (doctor + enfermero)
             Thread.sleep(paciente.getTiempoMaxDeConsulta() * 100);
 
             clinica.incrementarAtendidos();
@@ -94,7 +93,7 @@ class Doctor implements Runnable {
 
         } finally {
             disponible = true;
-            clinica.enfermeroDisponible.release(); // Libera al enfermero
+            clinica.enfermeroDisponible.release();
             clinica.consultorioLibre.release();
         }
     }

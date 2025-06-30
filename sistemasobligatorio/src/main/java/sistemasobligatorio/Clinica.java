@@ -148,7 +148,6 @@ public class Clinica {
         return 720 - ((tiempoSimulado[0] - 8) * 60 + tiempoSimulado[1]);
     }
 
-    // Comparador para priorizar pacientes
     private static class ComparadorPrioridad implements Comparator<Paciente> {
         @Override
         public int compare(Paciente p1, Paciente p2) {
@@ -159,7 +158,6 @@ public class Clinica {
                 return Integer.compare(prioridad1, prioridad2);
             }
 
-            // Si tienen la misma prioridad, el que lleva más tiempo esperando va primero
             return Integer.compare(p2.getTiempoEsperando(), p1.getTiempoEsperando());
         }
 
