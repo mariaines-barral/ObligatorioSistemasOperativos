@@ -5,17 +5,11 @@ Dr. Rick trabajando - Esperando pacientes para atender B)
 Paciente Lucia agregado a la cola
 Dr. House atendiendo Urgencia de Lucia junto al enfermero.
 Paciente Pedro agregado a la cola
-Lucia atendido exitosamente
-Dr. Grey atendiendo Urgencia de Pedro junto al enfermero.
 Paciente Emilia agregado a la cola
 Paciente Santiago agregado a la cola
-Pedro atendido exitosamente
-Dr. Rick atendiendo Urgencia de Emilia junto al enfermero.
 
 Hora actual: 9:00
 Paciente Milagros agregado a la cola
-Emilia atendido exitosamente
-Dr. House atendiendo Urgencia de Santiago junto al enfermero.
 Paciente Tomas agregado a la cola
 Paciente Sol agregado a la cola
 
@@ -33,49 +27,39 @@ Hora actual: 12:00
 Paciente Victoria agregado a la cola
 Paciente Benjamin agregado a la cola
 Paciente Pilar agregado a la cola
+Paciente Facundo fue rechazado. No da el tiempo para atenderlo hoy.
+Paciente Micaela fue rechazado. No da el tiempo para atenderlo hoy.
 
 Hora actual: 13:00
-Paciente Facundo agregado a la cola
-Paciente Micaela agregado a la cola
-Santiago atendido exitosamente
-Dr. House atendiendo Urgencia de Sol junto al enfermero.
-Sol atendido exitosamente
-Dr. Grey atendiendo Urgencia de Milagros junto al enfermero.
-Milagros atendido exitosamente
-Dr. Grey atendiendo Urgencia de Lucas junto al enfermero.
 
 Hora actual: 14:00
-Lucas atendido exitosamente
-Dr. Rick atendiendo Urgencia de Tomas junto al enfermero.
+Lucia atendido exitosamente
+Dr. Grey atendiendo Urgencia de Pedro junto al enfermero.
 
 Hora actual: 15:00
-Tomas atendido exitosamente
-Dr. Rick atendiendo Urgencia de Matias junto al enfermero.
-Matias atendido exitosamente
-Dr. House atendiendo Urgencia de Carla junto al enfermero.
+Pedro atendido exitosamente
+Dr. Grey atendiendo Urgencia de Milagros junto al enfermero.
+Milagros atendido exitosamente
+Dr. Rick atendiendo Urgencia de Emilia junto al enfermero.
 
 Hora actual: 16:00
-Carla atendido exitosamente
-Dr. Grey atendiendo Urgencia de Cecilia junto al enfermero.
+Emilia atendido exitosamente
+Dr. House atendiendo Urgencia de Santiago junto al enfermero.
+Santiago atendido exitosamente
+Dr. House atendiendo Urgencia de Carla junto al enfermero.
 
 Hora actual: 17:00
-Cecilia atendido exitosamente
-Dr. Rick atendiendo Urgencia de Aldana junto al enfermero.
+Carla atendido exitosamente
+Dr. Grey atendiendo Urgencia de Tomas junto al enfermero.
 
 Hora actual: 18:00
-Aldana atendido exitosamente
-Dr. House atendiendo Urgencia de Diego junto al enfermero.
-Diego atendido exitosamente
-Dr. House atendiendo Urgencia de Pilar junto al enfermero.
 
 Hora actual: 19:00
-Pilar atendido exitosamente
-Dr. Grey atendiendo Urgencia de Victoria junto al enfermero.
 
 Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
-Pacientes atendidos: 14
-Pacientes rechazados: 0
+Pacientes atendidos: 6
+Pacientes rechazados: 2
 Pacientes muertos: 0
