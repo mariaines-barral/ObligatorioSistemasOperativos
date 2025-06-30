@@ -1,46 +1,67 @@
-ecepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
+Recepcionista Pam Beesly trabajando: Gestionando cola de pacientes :)
+Dr. Grey trabajando - Esperando pacientes para atender B)
 Dr. House trabajando - Esperando pacientes para atender B)
-Enfermero Stark trabajando - Esperando pacientes para atender :^)
+Dr. Rick trabajando - Esperando pacientes para atender B)
 Paciente Juan agregado a la cola
-Dr. House y el enfermero atendiendo Emergencia de Juan
+Dr. Grey atendiendo Emergencia de Juan junto al enfermero.
 Paciente Ana agregado a la cola
+Juan atendido exitosamente :)
+Dr. House atendiendo Emergencia de Ana junto al enfermero.
 Paciente Luis agregado a la cola
 Paciente Lucia agregado a la cola
+
+Hora actual: 9:00
 Paciente Bruno agregado a la cola
 Paciente Sofia agregado a la cola
 Paciente Carlos agregado a la cola
+
+Hora actual: 10:00
 Paciente Valentina agregado a la cola
 Paciente Mateo agregado a la cola
 Paciente Florencia agregado a la cola
-Juan atendido exitosamente :)
+
+Hora actual: 11:00
 Paciente Martin agregado a la cola
 Paciente Julieta agregado a la cola
-Dr. House y el enfermero atendiendo Emergencia de Julieta
 Paciente Nicolas agregado a la cola
-Paciente Camila agregado a la cola
-Paciente Ramiro agregado a la cola
-Paciente Paula agregado a la cola
-Paciente Federico agregado a la cola
-Paciente Martina agregado a la cola
-Paciente Andrea agregado a la cola
-Paciente Gabriel agregado a la cola
-Paciente Rocio agregado a la cola
-Julieta atendido exitosamente :)
-Hora actual: 9:00
-Hora actual: 10:00
-Hora actual: 11:00
+
 Hora actual: 12:00
+Paciente Camila agregado a la cola
+Paciente Bruno ha muerto esperando :'(
+Paciente Ramiro agregado a la cola
+Paciente Sofia ha muerto esperando :'(
+Paciente Paula agregado a la cola
+
 Hora actual: 13:00
+Paciente Carlos ha muerto esperando :'(
+Paciente Federico agregado a la cola
+Paciente Valentina ha muerto esperando :'(
+Paciente Martina agregado a la cola
+Paciente Mateo ha muerto esperando :'(
+Paciente Andrea agregado a la cola
+Paciente Florencia ha muerto esperando :'(
+Paciente Gabriel agregado a la cola
+
 Hora actual: 14:00
+Paciente Martin ha muerto esperando :'(
+Paciente Rocio fue rechazado. No da el tiempo para atenderlo hoy.
+
 Hora actual: 15:00
+
 Hora actual: 16:00
+Ana atendido exitosamente :)
+Dr. Rick atendiendo Emergencia de Luis junto al enfermero.
+
 Hora actual: 17:00
+
 Hora actual: 18:00
+
 Hora actual: 19:00
+
 Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
 Pacientes atendidos: 2
-Pacientes rechazados: 0
-Pacientes muertos: 0
+Pacientes rechazados: 1
+Pacientes muertos: 7

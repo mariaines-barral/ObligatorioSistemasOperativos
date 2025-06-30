@@ -14,7 +14,7 @@ import java.io.PrintStream;
 
 class Main {
     public static void main(String[] args) {
-        String rutaSalida = "sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\casoBaseSalida.txt";
+        String rutaSalida = "";
         try {
             PrintStream archivoSalida = new PrintStream(rutaSalida);
             System.setOut(archivoSalida);
@@ -22,7 +22,7 @@ class Main {
             e.printStackTrace();
         }
         String[] nombresDoctores = { "Dr. House", "Dr. Grey", "Dr. Rick" };
-        Clinica clinica = new Clinica("sistemasobligatorio\\src\\main\\java\\sistemasobligatorio\\casoBaseEntrada.txt",
+        Clinica clinica = new Clinica("",
                 nombresDoctores,
                 "Enfermero Stark", "Pam Beesly");
         clinica.esperarCierre();
