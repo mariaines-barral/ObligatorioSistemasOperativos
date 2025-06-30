@@ -3,90 +3,81 @@ Dr. House trabajando - Esperando pacientes para atender B)
 Dr. Grey trabajando - Esperando pacientes para atender B)
 Dr. Rick trabajando - Esperando pacientes para atender B)
 Paciente Lucia agregado a la cola
-Dr. House atendiendo Urgencia de Lucia junto al enfermero.
 Paciente Juan agregado a la cola
-Lucia atendido exitosamente
-Dr. Grey atendiendo Emergencia de Juan junto al enfermero.
 Paciente Sofia agregado a la cola
 Dr. Rick entrevistando a Sofia para el carné de salud.
-Entrevista completada. Enviando a análisis de sangre y orina a Sofia
 Paciente Pedro agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Sofia
+Enfermero Stark realizando análisis para Sofia
 
 Hora actual: 9:00
-Juan atendido exitosamente :)
-Enfermero Stark realizando análisis para Sofia
 Análisis de sangre y orina para Sofia completados
-Dr. House atendiendo Urgencia de Pedro junto al enfermero.
-Paciente Ana fue rechazado. No da el tiempo para atenderlo hoy.
-Paciente Valentina agregado a la cola
+Paciente Ana agregado a la cola
+Dr. Grey atendiendo Emergencia de Ana junto al enfermero.
+Ana atendido exitosamente :)
 Paciente Carlos agregado a la cola
-Pedro atendido exitosamente
-Dr. Grey entrevistando a Valentina para el carné de salud.
+Dr. House atendiendo Urgencia de Carlos junto al enfermero.
 Paciente Bruno agregado a la cola
-Dr. House atendiendo Emergencia de Bruno junto al enfermero.
 
 Hora actual: 10:00
-Entrevista completada. Enviando a análisis de sangre y orina a Valentina
+Carlos atendido exitosamente
+Dr. Rick atendiendo Emergencia de Bruno junto al enfermero.
 Paciente Florencia agregado a la cola
-Bruno atendido exitosamente :)
-Enfermero Stark realizando análisis para Valentina
+Dr. Grey entrevistando a Florencia para el carné de salud.
+Entrevista completada. Enviando a análisis de sangre y orina a Florencia
 Paciente Luis agregado a la cola
-Análisis de sangre y orina para Valentina completados
-Dr. Rick atendiendo Urgencia de Carlos junto al enfermero.
+Bruno atendido exitosamente :)
+Enfermero Stark realizando análisis para Florencia
+Análisis de sangre y orina para Florencia completados
+Dr. House atendiendo Urgencia de Luis junto al enfermero.
 Paciente Camila agregado a la cola
 
 Hora actual: 11:00
-Carlos atendido exitosamente
-Dr. House entrevistando a Florencia para el carné de salud.
 Paciente Ramiro agregado a la cola
-Entrevista completada. Enviando a análisis de sangre y orina a Florencia
-Enfermero Stark realizando análisis para Florencia
+Luis atendido exitosamente
+Dr. Rick entrevistando a Camila para el carné de salud.
+Dr. Grey atendiendo Emergencia de Ramiro junto al enfermero.
 Paciente Julieta agregado a la cola
-Análisis de sangre y orina para Florencia completados
-Dr. Grey atendiendo Urgencia de Luis junto al enfermero.
+Entrevista completada. Enviando a análisis de sangre y orina a Camila
+Dr. House entrevistando a Julieta para el carné de salud.
 Paciente Nicolas agregado a la cola
+Ramiro atendido exitosamente :)
+Enfermero Stark realizando análisis para Camila
+Entrevista completada. Enviando a análisis de sangre y orina a Julieta
 
 Hora actual: 12:00
-Luis atendido exitosamente
-Dr. House atendiendo Emergencia de Ramiro junto al enfermero.
 Paciente Paula agregado a la cola
-Paciente Federico agregado a la cola
-Ramiro atendido exitosamente :)
+Análisis de sangre y orina para Camila completados
+Enfermero Stark realizando análisis para Julieta
+Análisis de sangre y orina para Julieta completados
 Dr. Grey atendiendo Urgencia de Nicolas junto al enfermero.
+Paciente Federico agregado a la cola
+Nicolas atendido exitosamente
 Paciente Martina agregado a la cola
+Dr. Grey entrevistando a Martina para el carné de salud.
+Dr. House atendiendo Emergencia de Federico junto al enfermero.
 
 Hora actual: 13:00
+Entrevista completada. Enviando a análisis de sangre y orina a Martina
+Dr. Rick entrevistando a Paula para el carné de salud.
 Paciente Gabriel agregado a la cola
-Nicolas atendido exitosamente
-Dr. House atendiendo Emergencia de Federico junto al enfermero.
-Paciente Rocio agregado a la cola
-Paciente Emilia agregado a la cola
 Federico atendido exitosamente :)
-Dr. Grey atendiendo Urgencia de Gabriel junto al enfermero.
+Enfermero Stark realizando análisis para Martina
+Paciente Rocio agregado a la cola
+Entrevista completada. Enviando a análisis de sangre y orina a Paula
+Análisis de sangre y orina para Martina completados
+Enfermero Stark realizando análisis para Paula
+Paciente Emilia agregado a la cola
+Análisis de sangre y orina para Paula completados
+Dr. Rick atendiendo Emergencia de Emilia junto al enfermero.
 
 Hora actual: 14:00
-Gabriel atendido exitosamente
-Dr. Grey entrevistando a Julieta para el carné de salud.
-Dr. House atendiendo Emergencia de Emilia junto al enfermero.
-Entrevista completada. Enviando a análisis de sangre y orina a Julieta
-Dr. Rick entrevistando a Camila para el carné de salud.
 Emilia atendido exitosamente :)
-Entrevista completada. Enviando a análisis de sangre y orina a Camila
-Enfermero Stark realizando análisis para Julieta
-Dr. House entrevistando a Paula para el carné de salud.
+Dr. House atendiendo Urgencia de Gabriel junto al enfermero.
+Gabriel atendido exitosamente
+Dr. Grey entrevistando a Rocio para el carné de salud.
 
 Hora actual: 15:00
-Análisis de sangre y orina para Julieta completados
-Enfermero Stark realizando análisis para Camila
-Entrevista completada. Enviando a análisis de sangre y orina a Paula
-Dr. Grey entrevistando a Martina para el carné de salud.
-Análisis de sangre y orina para Camila completados
-Enfermero Stark realizando análisis para Paula
-Análisis de sangre y orina para Paula completados
-Entrevista completada. Enviando a análisis de sangre y orina a Martina
-Enfermero Stark realizando análisis para Martina
-Dr. Rick entrevistando a Rocio para el carné de salud.
-Análisis de sangre y orina para Martina completados
 Entrevista completada. Enviando a análisis de sangre y orina a Rocio
 Enfermero Stark realizando análisis para Rocio
 Análisis de sangre y orina para Rocio completados
@@ -103,6 +94,6 @@ Hora actual: 20:00
 La clínica cerró por hoy. Nos vemos mañana!
 
 === ESTADISTICAS FINALES ===
-Pacientes atendidos: 19
-Pacientes rechazados: 1
+Pacientes atendidos: 16
+Pacientes rechazados: 0
 Pacientes muertos: 0
