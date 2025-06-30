@@ -49,6 +49,7 @@ public class Paciente {
         this.TiempoEsperando++;
         if (this.MotivoDeConsulta.equals("Urgencia") && this.TiempoEsperando >= 120) {
             this.MotivoDeConsulta = "Emergencia";
+            this.TiempoEsperando = 0;
         } else if (this.MotivoDeConsulta.equals("Emergencia") && this.TiempoEsperando >= 10) {
             setTiempoDeEsperaAgotado();
         }
